@@ -1,2 +1,0 @@
-июн. 28, 2023 1:15:33 AM com.example.onlineauction.DatabaseConnector ConnectDb
-INFO: Установлено соединение с базой данных
