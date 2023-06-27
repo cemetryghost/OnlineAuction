@@ -124,3 +124,91 @@
     -fx-font-weight: bold;
 }
 
+.text-field {
+    -fx-font-family: sans-serif;
+    -fx-background-color: #fff;
+    -fx-border-radius: 12px; /* Небольшие скругления */
+    -fx-border-color: rgb(208, 72, 72);
+    -fx-border-width: 1px;
+    -fx-padding: 4px 8px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #474747;
+    -fx-cursor: text;
+    -fx-prompt-text-fill: rgb(208, 72, 72);
+}
+
+.text-field:focused {
+    -fx-border-color: rgb(208, 72, 72);
+    -fx-box-shadow: 0 0 4px rgb(208, 72, 72);
+}
+
+.text-field:disabled {
+    -fx-opacity: 0.5;
+}
+
+.text-field:hover {
+    -fx-background-color: #f6a296;
+    -fx-text-fill: white;
+}
+
+.text-field:disabled:hover {
+    -fx-background-color: #f6a296;
+    -fx-text-fill: white;
+}
+
+.text-area {
+    -fx-font-size: 14px; /* Размер текста, такой же как в TextField */
+    -fx-border-color: rgb(208, 72, 72); /* Цвет рамки, соответствующий стилю TextField */
+    -fx-border-radius: 4px; /* Небольшие скругления */
+}
+
+.text-area:hover {
+    -fx-background-color: #f6a296; /* Цвет фона при наведении, соответствующий стилю TextField */
+    -fx-border-color: rgb(208, 72, 72); /* Цвет рамки при наведении, соответствующий стилю TextField */
+}
+.date-picker {
+    -fx-font-family: sans-serif;
+    -fx-background-color: #fff;
+    -fx-border-radius: 15px;
+    -fx-border-color: rgb(208, 72, 72);
+    -fx-border-width: 1px;
+    -fx-padding: 4px 8px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #474747;
+    -fx-cursor: pointer;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.date-picker .arrow {
+    -fx-shape: "M0,0 L7,4 L14,0 Z";
+    -fx-background-color: #888;
+    -fx-padding: 0 4px;
+    -fx-shape-padding: 0;
+    -fx-scale-shape: false;
+    -fx-rotate: 0;
+}
+
+.date-picker .text-input {
+    -fx-text-fill: #474747;
+}
+
+.date-picker .prompt-text {
+    -fx-text-fill: #474747;
+}
+
+.date-picker:focused .text-input {
+    -fx-prompt-text-fill: #474747;
+}
+
+.date-picker:disabled .text-input {
+    -fx-prompt-text-fill: #474747;
+}
+.date-picker .text-input:hover {
+    -fx-background-color: transparent;
+}
+
+
+

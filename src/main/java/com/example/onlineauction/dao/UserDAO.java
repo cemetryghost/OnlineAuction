@@ -1,5 +1,6 @@
 package com.example.onlineauction.dao;
 
+import com.example.onlineauction.LogManager;
 import com.example.onlineauction.constants.Role;
 import com.example.onlineauction.constants.Status;
 import com.example.onlineauction.model.User;
@@ -8,9 +9,13 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class UserDAO {
     private Connection connection;
+
+    private static final Logger LOGGER = LogManager.getLogger();
     public UserDAO(Connection connection) {
         this.connection = connection;
     }
@@ -30,12 +35,15 @@ public class UserDAO {
             statement.setString(6, user.getRole().toString());
             statement.setString(7, user.getStatus().toString());
 
-            // Проверяем, существует ли пользователь с таким логином
             if (isUserExist(user.getLogin())) {
-                throw new IllegalArgumentException("Пользователь с таким логином уже существует");
+                throw new IllegalArgumentException("Пользователь с таким логином уже существует!");
             }
 
             statement.executeUpdate();
+            LOGGER.log(Level.INFO, "Пользователь " + user.getLogin() + " успешно сохранен в базе данных");
+        } catch (SQLException e) {
+            LOGGER.log(Level.SEVERE, "Ошибка при сохранении пользователя " + user.getLogin() + ": " + e.getMessage(), e);
+            throw e;
         }
     }
 
@@ -49,23 +57,11 @@ public class UserDAO {
                     return count > 0;
                 }
             }
+        } catch (SQLException e) {
+            LOGGER.log(Level.SEVERE, "Ошибка при проверке существования пользователя с логином " + login + ": " + e.getMessage(), e);
+            throw e;
         }
         return false;
-    }
-
-
-    public User getUserByUsernameAndPassword(String username, String password) throws SQLException {
-        String query = "SELECT * FROM users WHERE login = ? AND password = ?";
-        try (PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setString(1, username);
-            statement.setString(2, password);
-            try (ResultSet resultSet = statement.executeQuery()) {
-                if (resultSet.next()) {
-                    return createUserFromResultSet(resultSet);
-                }
-            }
-        }
-        return null;
     }
 
     public List<User> getAllUsers() throws SQLException {
@@ -77,22 +73,27 @@ public class UserDAO {
                 User user = createUserFromResultSet(resultSet);
                 users.add(user);
             }
+            LOGGER.log(Level.INFO, "Получено " + users.size() + " пользователей из базы данных.");
             return users;
+        } catch (SQLException e) {
+            LOGGER.log(Level.SEVERE, "Ошибка при получении списка пользователей: " + e.getMessage(), e);
+            throw e;
         }
     }
 
-    public int getIdByLogin(String login){
-        String query = "select idusers from users where login= ?";
-        try (PreparedStatement statement = connection.prepareStatement(query)){
+    public int getIdByLogin(String login) {
+        String query = "SELECT idusers FROM users WHERE login = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, login);
-            ResultSet resultSet = statement.executeQuery();
-            if(resultSet.next()){
-                int id = resultSet.getInt("idusers");
-                return id;
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    int id = resultSet.getInt("idusers");
+                    LOGGER.log(Level.INFO, "Получен ID пользователя с логином " + login + ": " + id);
+                    return id;
+                }
             }
-        }
-        catch (Exception e){
-            e.getMessage();
+        } catch (Exception e) {
+            LOGGER.log(Level.SEVERE, "Ошибка при получении ID пользователя с логином " + login + ": " + e.getMessage(), e);
         }
         return 0;
     }
@@ -103,9 +104,14 @@ public class UserDAO {
             statement.setString(1, login);
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
-                    return createUserFromResultSet(resultSet);
+                    User user = createUserFromResultSet(resultSet);
+                    LOGGER.log(Level.INFO, "Получен пользователь с логином " + login);
+                    return user;
                 }
             }
+        } catch (SQLException e) {
+            LOGGER.log(Level.SEVERE, "Ошибка при получении пользователя с логином " + login + ": " + e.getMessage(), e);
+            throw e;
         }
         return null;
     }
@@ -115,6 +121,10 @@ public class UserDAO {
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, userId);
             statement.executeUpdate();
+            LOGGER.log(Level.INFO, "Пользователь с ID " + userId + " заблокирован успешно.");
+        } catch (SQLException e) {
+            LOGGER.log(Level.SEVERE, "Ошибка при блокировке пользователя с ID " + userId + ": " + e.getMessage(), e);
+            throw e;
         }
     }
 
@@ -123,6 +133,10 @@ public class UserDAO {
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, userId);
             statement.executeUpdate();
+            LOGGER.log(Level.INFO, "Пользователь с ID " + userId + " разблокирован успешно.");
+        } catch (SQLException e) {
+            LOGGER.log(Level.SEVERE, "Ошибка при разблокировке пользователя с ID " + userId + ": " + e.getMessage(), e);
+            throw e;
         }
     }
 
@@ -131,6 +145,10 @@ public class UserDAO {
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, userId);
             statement.executeUpdate();
+            LOGGER.log(Level.INFO, "Пользователь с ID " + userId + " удален успешно.");
+        } catch (SQLException e) {
+            LOGGER.log(Level.SEVERE, "Ошибка при удалении пользователя с ID " + userId + ": " + e.getMessage(), e);
+            throw e;
         }
     }
 
@@ -145,6 +163,7 @@ public class UserDAO {
         Status status = Status.valueOf(resultSet.getString("status"));
         User user = new User(name, surname, login, password, birthDate, role, status);
         user.setId(id);
+        LOGGER.log(Level.INFO, "Создан объект User из ResultSet для пользователя с ID " + id);
         return user;
     }
 
@@ -159,7 +178,29 @@ public class UserDAO {
                     return Role.valueOf(roleString.toUpperCase());
                 }
             }
+            LOGGER.log(Level.INFO, "Получена роль пользователя " + username);
+        } catch (SQLException e) {
+            LOGGER.log(Level.SEVERE, "Ошибка при получении роли пользователя " + username + ": " + e.getMessage(), e);
+            throw e;
         }
         return null;
+    }
+
+    public String getNameAndSurnameById(int id) throws Exception {
+        String result = "";
+        String query = "SELECT name, surname FROM users WHERE idusers = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, id);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    result = String.format("%s %s", resultSet.getString("name"), resultSet.getString("surname"));
+                }
+                LOGGER.log(Level.INFO, "Получено имя и фамилия пользователя с ID " + id);
+            }
+        } catch (Exception e) {
+            LOGGER.log(Level.SEVERE, "Ошибка при получении имени и фамилии пользователя с ID " + id + ": " + e.getMessage(), e);
+            throw e;
+        }
+        return result;
     }
 }

@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="AnchorPaneparticipationsBuyer" prefHeight="547.0" prefWidth="679.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.onlineauction.controller.buyer.ParticipationsBuyerController">
    <children>
-      <TableView fx:id="TableViewParticipationsBuyer" layoutY="125.0" prefHeight="423.0" prefWidth="679.0" stylesheets="@../../../../style.css">
+      <TableView fx:id="TableViewParticipationsBuyer" layoutY="202.0" prefHeight="346.0" prefWidth="679.0" stylesheets="@../../../../style.css">
          <columns>
-            <TableColumn fx:id="col_nameLotsParticipationsBuyer" prefWidth="159.33331298828125" text="Наименование товара" />
-            <TableColumn fx:id="col_currentPriceLotsParticipationsBuyer" minWidth="0.0" prefWidth="126.6666259765625" text="Текущая ставка" />
-            <TableColumn fx:id="col_betParticipationsBuyer" minWidth="0.0" prefWidth="126.0" text="Моя ставка" />
-            <TableColumn fx:id="col_nameSellerLotsParticipationsBuyer" minWidth="0.0" prefWidth="150.00006103515625" text="Продавец" />
-            <TableColumn fx:id="col_statusLotsParticipationsBuyer" minWidth="0.0" prefWidth="118.0" text="Статус" />
+            <TableColumn fx:id="col_nameLotsParticipationsBuyer" prefWidth="120.0" text="Наименование " />
+            <TableColumn fx:id="col_currentPriceLotsParticipationsBuyer" minWidth="0.0" prefWidth="127.33331298828125" text="Текущая ставка" />
+            <TableColumn fx:id="col_betParticipationsBuyer" minWidth="0.0" prefWidth="119.33331298828125" text="Моя ставка" />
+            <TableColumn fx:id="col_nameSellerLotsParticipationsBuyer" minWidth="0.0" prefWidth="185.3333740234375" text="Продавец" />
+            <TableColumn fx:id="col_statusLotsParticipationsBuyer" minWidth="0.0" prefWidth="125.33333333333337" text="Статус" />
          </columns>
       </TableView>
       <Label layoutX="279.0" layoutY="44.0" prefHeight="34.0" prefWidth="121.0" text="Участия " textFill="#f41111" wrapText="true">
@@ -22,5 +26,18 @@
             <Font name="Tahoma Bold" size="27.0" />
          </font>
       </Label>
+      <TextField fx:id="betUpFieldBuyer" layoutX="22.0" layoutY="121.0" prefHeight="40.0" prefWidth="409.0" promptText="Введите ставку" style="-fx-background-radius: 15;" stylesheets="@../../../../style.css" />
+      <Button fx:id="upBetBuyer" layoutX="441.0" layoutY="96.0" mnemonicParsing="false" onAction="#UpBetBuyer" prefHeight="84.0" prefWidth="218.0" style="-fx-cursor: hand;" stylesheets="@../../../../style.css" text="Повысить ставку">
+         <font>
+            <Font name="Tahoma Bold" size="17.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="33.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../image/edit_512px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

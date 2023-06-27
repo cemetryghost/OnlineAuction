@@ -58,6 +58,6 @@
             </ImageView>
          </graphic>
       </Button>
-      <TextField fx:id="nameCategoryField" layoutX="34.0" layoutY="182.0" prefHeight="38.0" prefWidth="613.0" style="-fx-background-radius: 15;" />
+      <TextField fx:id="nameCategoryField" layoutX="24.0" layoutY="182.0" prefHeight="38.0" prefWidth="629.0" promptText="Категория" style="-fx-background-radius: 15;" stylesheets="@../../../../style.css" />
    </children>
 </AnchorPane>

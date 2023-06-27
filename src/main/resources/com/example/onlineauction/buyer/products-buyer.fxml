@@ -11,33 +11,33 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="AnchorPaneLotsBuyer" prefHeight="547.0" prefWidth="679.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.onlineauction.controller.buyer.ProductsBuyerController">
-   <children>
-      <ComboBox fx:id="selectCategoriesBuyer" layoutX="22.0" layoutY="135.0" onAction="#SelectCategories" prefHeight="34.0" prefWidth="292.0" stylesheets="@../../../../style.css" />
-      <Label layoutX="151.0" layoutY="35.0" prefHeight="34.0" prefWidth="378.0" text="Выберите категорию товаров" textFill="#f41111" wrapText="true">
-         <font>
-            <Font name="Tahoma" size="27.0" />
-         </font>
-      </Label>
-      <TableView fx:id="TableViewLotsBuyer" layoutY="224.0" prefHeight="324.0" prefWidth="679.0" stylesheets="@../../../../style.css">
-        <columns>
-          <TableColumn fx:id="col_nameLotsBuyer" prefWidth="159.33331298828125" text="Наименование товара" />
-          <TableColumn fx:id="col_startPriceLotsBuyer" minWidth="0.0" prefWidth="118.0" text="Начальная цена" />
-            <TableColumn fx:id="col_ceurrentPriceLotsBuyer" minWidth="0.0" prefWidth="126.6666259765625" text="Текущая цена" />
-            <TableColumn fx:id="col_endDateLots" minWidth="0.0" prefWidth="131.33343505859375" text="Дата завершения" />
-            <TableColumn fx:id="col_betBuyer" minWidth="0.0" prefWidth="143.333251953125" text="Моя ставка" />
-        </columns>
-      </TableView>
-      <Button fx:id="detailNBetButton" layoutX="428.0" layoutY="85.0" mnemonicParsing="false" onAction="#DetailNBet" prefHeight="121.0" prefWidth="226.0" style="-fx-cursor: hand;" stylesheets="@../../../../style.css" text="Просмотр деталей и размещение ставки" wrapText="true">
-         <font>
-            <Font name="Tahoma Bold" size="21.0" />
-         </font>
-         <graphic>
-            <ImageView fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../image/preview_pane_480px.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-   </children>
+    <children>
+        <ComboBox fx:id="selectCategoriesBuyer" layoutX="23.0" layoutY="128.0" onAction="#SelectCategories" prefHeight="34.0" prefWidth="292.0" promptText="Выберите категорию" stylesheets="@../../../../style.css" />
+        <Label layoutX="292.0" layoutY="34.0" prefHeight="34.0" prefWidth="95.0" text="Товары" textFill="#f41111" wrapText="true">
+            <font>
+                <Font name="Tahoma" size="27.0" />
+            </font>
+        </Label>
+        <TableView fx:id="TableViewLotsBuyer" layoutY="224.0" onMouseClicked="#getSelected" prefHeight="324.0" prefWidth="679.0" stylesheets="@../../../../style.css">
+            <columns>
+                <TableColumn fx:id="col_nameLotsBuyer" prefWidth="159.33331298828125" text="Наименование товара" />
+                <TableColumn fx:id="col_startPriceLotsBuyer" minWidth="0.0" prefWidth="118.0" text="Начальная цена" />
+                <TableColumn fx:id="col_currentPriceLotsBuyer" minWidth="0.0" prefWidth="126.6666259765625" text="Текущая цена" />
+                <TableColumn fx:id="col_endDateLots" minWidth="0.0" prefWidth="131.33343505859375" text="Дата завершения" />
+                <TableColumn fx:id="col_betBuyer" minWidth="0.0" prefWidth="143.333251953125" text="Моя ставка" />
+            </columns>
+        </TableView>
+        <Button fx:id="detailNBetButton" layoutX="428.0" layoutY="85.0" mnemonicParsing="false" onAction="#DetailNBet" prefHeight="121.0" prefWidth="226.0" style="-fx-cursor: hand;" stylesheets="@../../../../style.css" text="Просмотр деталей и размещение ставки" wrapText="true">
+            <font>
+                <Font name="Tahoma Bold" size="21.0" />
+            </font>
+            <graphic>
+                <ImageView fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../image/preview_pane_480px.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+    </children>
 </AnchorPane>

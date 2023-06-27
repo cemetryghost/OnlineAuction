@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.example.onlineauction.WindowsManager;
 import com.example.onlineauction.util.DateTimeUtil;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -12,6 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class SellerController {
 
@@ -20,9 +22,7 @@ public class SellerController {
     @FXML private Button LotsSellerButton;
     @FXML private AnchorPane anchorPaneRulesSeller;
     @FXML private Label dateTimeLabel;
-    @FXML private Button exitSellerButton;
-    @FXML private Button rulesSellerButton;
-    @FXML private Button winningSellerButton;
+    @FXML private Button exitSellerButton, rulesSellerButton, winningSellerButton, exitAccountSeller;
     private Timeline timeline;
 
     @FXML
@@ -31,7 +31,7 @@ public class SellerController {
     }
 
     @FXML
-    void GoToSellerLots(ActionEvent event) {
+    public void GoToSellerLots(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/onlineauction/seller/products-seller.fxml"));
             AnchorPane newPane = fxmlLoader.load();
@@ -66,5 +66,13 @@ public class SellerController {
     @FXML
     void initialize() {
         DateTimeUtil.setupDateTimeUpdate(dateTimeLabel);
+    }
+
+    @FXML
+    void ExitAccountSeller(ActionEvent event) {
+        Stage stageClose = (Stage) exitAccountSeller.getScene().getWindow();
+        stageClose.close();
+
+        WindowsManager.openWindow("AllUsers/authorization.fxml","Авторизация");
     }
 }

@@ -10,14 +10,15 @@ public class Category {
     private int id;
     private StringProperty name;
     private String name1;
-    private double startPrice;
-    private double myBet;
-    private double currentPrice;
+    private double startPrice, myBet, currentPrice;
     private Date date;
+
+
     public Category(int id, String name) {
         this.id = id;
         this.name = new SimpleStringProperty(name);
     }
+
     public Category(String name1, double startPrice, double currentPrice, Date date, double myBet){
         this.name1 = name1;
         this.startPrice = startPrice;

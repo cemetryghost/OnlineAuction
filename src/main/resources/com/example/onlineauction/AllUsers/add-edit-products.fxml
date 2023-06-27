@@ -53,7 +53,7 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="582.0" layoutY="290.0" prefHeight="77.0" prefWidth="136.0" text="Состояние товара:" textAlignment="CENTER" textFill="#f41111" wrapText="true">
+      <Label layoutX="582.0" layoutY="283.0" prefHeight="77.0" prefWidth="136.0" text="Состояние товара:" textAlignment="CENTER" textFill="#f41111" wrapText="true">
          <font>
             <Font size="20.0" />
          </font>
@@ -70,15 +70,15 @@
             </ImageView>
          </graphic>
       </Button>
-      <TextField fx:id="nameLotsField" layoutX="174.0" layoutY="76.0" prefHeight="34.0" prefWidth="395.0" />
-      <TextArea fx:id="descriptionLotsArea" layoutX="174.0" layoutY="171.0" prefHeight="316.0" prefWidth="395.0" text="&#10;" wrapText="true" />
-      <TextField fx:id="startPriceField" layoutX="741.0" layoutY="76.0" prefHeight="34.0" prefWidth="395.0" />
-      <TextField fx:id="stepPriceField" layoutX="740.0" layoutY="122.0" prefHeight="34.0" prefWidth="395.0" />
-      <DatePicker fx:id="datePublication" editable="false" layoutX="740.0" layoutY="172.0" prefHeight="34.0" prefWidth="395.0" />
-      <DatePicker fx:id="dateFinish" editable="false" layoutX="741.0" layoutY="235.0" prefHeight="34.0" prefWidth="395.0" />
-      <ComboBox fx:id="categoryComboBox" layoutX="174.0" layoutY="121.0" prefHeight="36.0" prefWidth="395.0" stylesheets="@../../../../style.css" />
-      <TextField fx:id="conditionField" layoutX="739.0" layoutY="312.0" prefHeight="34.0" prefWidth="395.0" />
-      <Button fx:id="saveButtonManageLots" layoutX="731.0" layoutY="383.0" mnemonicParsing="false" onAction="#SaveManageLots" prefHeight="103.0" prefWidth="299.0" style="-fx-cursor: hand;" stylesheets="@../../../../style.css" text="Сохранить">
+      <TextField fx:id="nameLotsField" layoutX="174.0" layoutY="76.0" prefHeight="34.0" prefWidth="395.0" style="-fx-background-radius: 15;" stylesheets="@../../../../style.css" />
+      <TextArea fx:id="descriptionLotsArea" layoutX="174.0" layoutY="171.0" prefHeight="316.0" prefWidth="395.0" stylesheets="@../../../../style.css" text="&#10;" wrapText="true" />
+      <TextField fx:id="startPriceField" layoutX="741.0" layoutY="76.0" prefHeight="34.0" prefWidth="395.0" style="-fx-background-radius: 15;" stylesheets="@../../../../style.css" />
+      <TextField fx:id="stepPriceField" layoutX="740.0" layoutY="122.0" prefHeight="34.0" prefWidth="395.0" style="-fx-background-radius: 15;" stylesheets="@../../../../style.css" />
+      <DatePicker fx:id="datePublication" editable="false" layoutX="740.0" layoutY="172.0" prefHeight="34.0" prefWidth="395.0" promptText="Выберите дату публикации" style="-fx-background-radius: 15;" stylesheets="@../../../../style.css" />
+      <DatePicker fx:id="dateFinish" editable="false" layoutX="741.0" layoutY="235.0" prefHeight="34.0" prefWidth="395.0" promptText="Выберите дату закрытия" style="-fx-background-radius: 40;" stylesheets="@../../../../style.css" />
+      <ComboBox fx:id="categoryComboBox" layoutX="174.0" layoutY="121.0" prefHeight="36.0" prefWidth="395.0" promptText="Выберите категорию" stylesheets="@../../../../style.css" />
+      <TextField fx:id="conditionField" layoutX="740.0" layoutY="295.0" prefHeight="34.0" prefWidth="395.0" style="-fx-background-radius: 15;" stylesheets="@../../../../style.css" />
+      <Button fx:id="saveButtonManageLots" layoutX="696.0" layoutY="374.0" mnemonicParsing="false" onAction="#SaveManageLots" prefHeight="103.0" prefWidth="299.0" style="-fx-cursor: hand;" stylesheets="@../../../../style.css" text="Сохранить">
          <font>
             <Font name="Tahoma Bold" size="21.0" />
          </font>

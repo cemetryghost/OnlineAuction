@@ -18,12 +18,12 @@
       </Label>
       <TableView fx:id="TableViewAccounts" layoutX="1.0" layoutY="199.0" prefHeight="368.0" prefWidth="679.0" stylesheets="@../../../../style.css">
          <columns>
-            <TableColumn fx:id="col_nameUser" prefWidth="112.66662335395813" text="Имя" />
-            <TableColumn fx:id="col_surnameUser" prefWidth="120.66669464111328" text="Фамилия" />
-            <TableColumn fx:id="col_loginUser" prefWidth="109.99998474121094" text="Логин " />
-            <TableColumn fx:id="col_passwordUser" prefWidth="121.33331298828125" text="Пароль" />
-            <TableColumn fx:id="col_statusUser" prefWidth="118.66665649414062" text="Статус аккаунта" />
-            <TableColumn fx:id="col_roleUser" prefWidth="97.33327229817712" text="Роль" />
+            <TableColumn fx:id="col_nameUser" prefWidth="99.33331036567688" text="Имя" />
+            <TableColumn fx:id="col_surnameUser" prefWidth="117.33332061767578" text="Фамилия" />
+            <TableColumn fx:id="col_loginUser" prefWidth="112.66667175292969" text="Логин " />
+            <TableColumn fx:id="col_passwordUser" prefWidth="108.0" text="Пароль" />
+            <TableColumn fx:id="col_statusUser" prefWidth="116.66671752929688" text="Статус " />
+            <TableColumn fx:id="col_roleUser" prefWidth="129.333251953125" text="Роль" />
          </columns>
       </TableView>
       <Button fx:id="unblockAccountsButton" layoutX="237.0" layoutY="81.0" mnemonicParsing="false" onAction="#UnblockAccounts" prefHeight="84.0" prefWidth="246.0" style="-fx-cursor: hand;" stylesheets="@../../../../style.css" text="Разблокировать">

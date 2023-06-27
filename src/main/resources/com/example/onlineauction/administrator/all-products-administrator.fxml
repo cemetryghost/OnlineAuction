@@ -17,13 +17,13 @@
             <Font name="Tahoma Bold" size="27.0" />
          </font>
       </Label>
-      <TableView fx:id="TableViewAdminLots" layoutX="1.0" layoutY="292.0" prefHeight="275.0" prefWidth="679.0" stylesheets="@../../../../style.css">
+      <TableView fx:id="TableViewAdminLots" layoutX="1.0" layoutY="292.0" onMouseClicked="#getSelected" prefHeight="275.0" prefWidth="679.0" stylesheets="@../../../../style.css">
          <columns>
-            <TableColumn fx:id="col_nameLotsAdmin" prefWidth="143.9999439716339" text="Наименование" />
-            <TableColumn fx:id="col_categoryLotsAdmin" prefWidth="128.0000457763672" text="Категория" />
-            <TableColumn fx:id="col_startPriceLotsAdmin" prefWidth="130.00006103515625" text="Начальная цена" />
-            <TableColumn fx:id="col_currentPriceLotsAdmin" prefWidth="103.33331298828125" text="Текущая цена" />
-            <TableColumn fx:id="col_statusLotsAdmin" prefWidth="174.00003051757812" text="Статус" />
+            <TableColumn fx:id="col_nameLotsAdmin" prefWidth="121.99999737739563" text="Наименование" />
+            <TableColumn fx:id="col_categoryLotsAdmin" prefWidth="135.99999237060547" text="Категория" />
+            <TableColumn fx:id="col_startPriceLotsAdmin" prefWidth="118.6666259765625" text="Начальная цена" />
+            <TableColumn fx:id="col_currentPriceLotsAdmin" prefWidth="104.66668701171875" text="Текущая цена" />
+            <TableColumn fx:id="col_statusLotsAdmin" prefWidth="194.66671752929688" text="Статус" />
          </columns>
       </TableView>
       <Button fx:id="editLotsButton" layoutX="265.0" layoutY="138.0" mnemonicParsing="false" onAction="#EditLots" prefHeight="84.0" prefWidth="229.0" style="-fx-cursor: hand;" stylesheets="@../../../../style.css" text="Редактировать" textAlignment="CENTER" wrapText="true">
@@ -50,7 +50,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <ComboBox fx:id="statusLotsComboBox" layoutX="265.0" layoutY="80.0" prefHeight="36.0" prefWidth="766.0" stylesheets="@../../../../style.css" />
+      <ComboBox fx:id="statusLotsComboBox" layoutX="265.0" layoutY="80.0" prefHeight="36.0" prefWidth="766.0" promptText="Нажмите для выбора" stylesheets="@../../../../style.css" />
       <Label layoutX="33.0" layoutY="81.0" prefHeight="34.0" prefWidth="208.0" text="Выберите статус лота" textAlignment="CENTER" textFill="#f41111" wrapText="true">
          <font>
             <Font name="Tahoma" size="20.0" />

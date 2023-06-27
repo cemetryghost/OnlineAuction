@@ -55,7 +55,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="rulesSellerButton" layoutX="111.0" layoutY="510.0" mnemonicParsing="false" onAction="#rulesSeller" prefHeight="31.0" prefWidth="179.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Правила!" textFill="#2d36db" underline="true">
+            <Button fx:id="rulesSellerButton" layoutX="111.0" layoutY="485.0" mnemonicParsing="false" onAction="#rulesSeller" prefHeight="31.0" prefWidth="179.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Правила!" textFill="#2d36db" underline="true">
                <font>
                   <Font name="Tahoma" size="16.0" />
                </font>
@@ -65,6 +65,11 @@
                   <Font name="Tahoma Bold" size="19.0" />
                </font>
             </Label>
+            <Button fx:id="exitAccountSeller" layoutX="117.0" layoutY="548.0" mnemonicParsing="false" onAction="#ExitAccountSeller" prefHeight="31.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Выйти из аккаунта" textFill="#f40606" underline="true">
+               <font>
+                  <Font name="Tahoma" size="16.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
       <Circle layoutX="18.0" layoutY="-5.0" radius="60.0" stroke="BLACK" strokeType="INSIDE">

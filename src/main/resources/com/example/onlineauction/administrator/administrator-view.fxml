@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -68,7 +67,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="rulesAdminButton" layoutX="112.0" layoutY="506.0" mnemonicParsing="false" onAction="#RulesAdmin" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Правила!" textFill="#2d36db" underline="true">
+            <Button fx:id="rulesAdminButton" layoutX="112.0" layoutY="492.0" mnemonicParsing="false" onAction="#RulesAdmin" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Правила!" textFill="#2d36db" underline="true">
                <font>
                   <Font name="Tahoma" size="16.0" />
                </font>
@@ -78,6 +77,11 @@
                   <Font name="Tahoma Bold" size="19.0" />
                </font>
             </Label>
+            <Button fx:id="exitAccountAdmin" layoutX="115.0" layoutY="553.0" mnemonicParsing="false" onAction="#ExitAccountAdmin" prefHeight="31.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Выйти из аккаунта" textFill="#f40606" underline="true">
+               <font>
+                  <Font name="Tahoma" size="16.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
       <Circle layoutX="18.0" layoutY="-5.0" radius="60.0" stroke="BLACK" strokeType="INSIDE">
@@ -112,7 +116,7 @@
       </Button>
       <AnchorPane fx:id="AnchorPaneRulesAdmin" layoutX="392.0" layoutY="39.0" prefHeight="547.0" prefWidth="679.0">
          <children>
-            <Label layoutX="14.0" layoutY="116.0" prefHeight="129.0" prefWidth="651.0" text="2. Блокировки и удаления аккаунтов пользователей, должны иметь весомую причину." textAlignment="JUSTIFY" textFill="#f41111" wrapText="true">
+            <Label layoutX="14.0" layoutY="116.0" prefHeight="129.0" prefWidth="651.0" text="2. Блокировка и удаления аккаунтов пользователей, должны иметь весомую причину." textAlignment="JUSTIFY" textFill="#f41111" wrapText="true">
                <font>
                   <Font size="21.0" />
                </font>
@@ -132,7 +136,6 @@
                   <Image url="@../../../../image/CC8_PropertiesAuction_TEM1360_20210309141323_theedgemarkets.jpg" />
                </image>
             </ImageView>
-            <TabPane layoutX="-13.0" layoutY="48.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" />
          </children>
       </AnchorPane>
       <Label fx:id="dateTimeLabel" layoutX="568.0" layoutY="14.0" prefHeight="34.0" prefWidth="368.0" wrapText="true">

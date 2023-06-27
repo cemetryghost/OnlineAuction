@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -9,114 +10,109 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="639.0" prefWidth="1119.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.onlineauction.controller.DetailProductsController">
+<AnchorPane prefHeight="603.0" prefWidth="989.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.onlineauction.controller.DetailProductsController">
    <children>
-      <Label layoutX="503.0" layoutY="14.0" prefHeight="34.0" prefWidth="183.0" text="Детали лота" textFill="#f41111" wrapText="true">
+      <Label layoutX="403.0" layoutY="21.0" prefHeight="34.0" prefWidth="183.0" text="Детали лота" textFill="#f41111" wrapText="true">
          <font>
             <Font name="Tahoma Bold" size="27.0" />
          </font>
       </Label>
-      <Label layoutX="17.0" layoutY="76.0" prefHeight="34.0" prefWidth="143.0" text="Наименование:" textFill="#f41111">
+      <Label layoutX="17.0" layoutY="88.0" prefHeight="34.0" prefWidth="143.0" text="Наименование:" textFill="#f41111">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="601.0" layoutY="76.0" prefHeight="34.0" prefWidth="105.0" text="Категория:" textFill="#f41111">
+      <Label layoutX="36.0" layoutY="365.0" prefHeight="34.0" prefWidth="105.0" text="Категория:" textFill="#f41111">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="54.0" layoutY="273.0" prefHeight="34.0" prefWidth="105.0" text="Описание:" textFill="#f41111">
+      <Label layoutX="36.0" layoutY="175.0" prefHeight="34.0" prefWidth="105.0" text="Описание:" textFill="#f41111">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="601.0" layoutY="132.0" prefHeight="34.0" prefWidth="151.0" text="Стартовая цена:" textFill="#f41111">
+      <Label layoutX="41.0" layoutY="416.0" prefHeight="63.0" prefWidth="95.0" text="Стартовая цена:" textAlignment="CENTER" textFill="#f41111" wrapText="true">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="601.0" layoutY="180.0" prefHeight="34.0" prefWidth="95.0" text="Шаг цены:" textFill="#f41111">
+      <Label layoutX="572.0" layoutY="88.0" prefHeight="34.0" prefWidth="95.0" text="Шаг цены:" textFill="#f41111">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="597.0" layoutY="290.0" prefHeight="63.0" prefWidth="151.0" text="Дата закрытия лота:" textAlignment="CENTER" textFill="#f41111" wrapText="true">
+      <Label layoutX="548.0" layoutY="278.0" prefHeight="63.0" prefWidth="151.0" text="Дата закрытия лота:" textAlignment="CENTER" textFill="#f41111" wrapText="true">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="54.0" layoutY="485.0" prefHeight="34.0" prefWidth="105.0" text="Продавец:" textFill="#f41111">
+      <Label layoutX="36.0" layoutY="300.0" prefHeight="34.0" prefWidth="105.0" text="Продавец:" textFill="#f41111">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="586.0" layoutY="348.0" prefHeight="77.0" prefWidth="136.0" text="Состояние товара:" textAlignment="CENTER" textFill="#f41111" wrapText="true">
+      <Label layoutX="571.0" layoutY="351.0" prefHeight="77.0" prefWidth="105.0" text="Состояние товара:" textAlignment="CENTER" textFill="#f41111" wrapText="true">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="584.0" layoutY="430.0" prefHeight="34.0" prefWidth="112.0" text="Статус лота:" textFill="#f41111">
+      <Label layoutX="568.0" layoutY="440.0" prefHeight="34.0" prefWidth="112.0" text="Статус лота:" textFill="#f41111">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="nameLotsLabel" layoutX="174.0" layoutY="76.0" prefHeight="34.0" prefWidth="395.0">
+      <Label fx:id="nameLotsLabel" layoutX="174.0" layoutY="88.0" prefHeight="34.0" prefWidth="347.0">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="categoryLotsLabel" layoutX="706.0" layoutY="76.0" prefHeight="34.0" prefWidth="395.0">
+      <Label fx:id="categoryLotsLabel" layoutX="174.0" layoutY="365.0" prefHeight="34.0" prefWidth="347.0">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="descriptionLotsLabel" layoutX="174.0" layoutY="132.0" prefHeight="316.0" prefWidth="395.0" wrapText="true">
+      <Label fx:id="startPriceLotsLabel" layoutX="174.0" layoutY="431.0" prefHeight="34.0" prefWidth="347.0">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="startPriceLotsLabel" layoutX="755.0" layoutY="132.0" prefHeight="34.0" prefWidth="347.0">
+      <Label fx:id="stepPriceLotsLabel" layoutX="699.0" layoutY="88.0" prefHeight="34.0" prefWidth="271.0">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="stepPriceLotsLabel" layoutX="706.0" layoutY="180.0" prefHeight="34.0" prefWidth="395.0">
+      <Label fx:id="dateLotsLabel" layoutX="696.0" layoutY="209.0" prefHeight="34.0" prefWidth="271.0">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="dateLotsLabel" layoutX="722.0" layoutY="233.0" prefHeight="34.0" prefWidth="379.0">
+      <Label fx:id="sellerLotsLabel" layoutX="174.0" layoutY="300.0" prefHeight="34.0" prefWidth="347.0">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="sellerLotsLabel" layoutX="174.0" layoutY="485.0" prefHeight="34.0" prefWidth="395.0">
+      <Label fx:id="conditionLotsLabel" layoutX="703.0" layoutY="373.0" prefHeight="34.0" prefWidth="271.0">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="conditionLotsLabel" layoutX="720.0" layoutY="370.0" prefHeight="34.0" prefWidth="379.0">
+      <Label fx:id="statusLotsLabel" layoutX="703.0" layoutY="440.0" prefHeight="34.0" prefWidth="271.0">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="statusLotsLabel" layoutX="710.0" layoutY="430.0" prefHeight="34.0" prefWidth="389.0">
+      <Label layoutX="563.0" layoutY="194.0" prefHeight="63.0" prefWidth="121.0" text="Дата публикации:" textAlignment="CENTER" textFill="#f41111" wrapText="true">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="593.0" layoutY="218.0" prefHeight="63.0" prefWidth="121.0" text="Дата публикации:" textAlignment="CENTER" textFill="#f41111" wrapText="true">
+      <Label fx:id="finishLotsLabel" layoutX="703.0" layoutY="293.0" prefHeight="34.0" prefWidth="271.0">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="finishLotsLabel" layoutX="746.0" layoutY="305.0" prefHeight="34.0" prefWidth="354.0">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Button fx:id="backDetailLots" mnemonicParsing="false" onAction="#BackDetail" prefHeight="16.0" prefWidth="0.0" style="-fx-cursor: hand;" stylesheets="@../../../../style.css">
+      <Button fx:id="backDetailLots" layoutX="5.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackDetail" prefHeight="16.0" prefWidth="0.0" style="-fx-cursor: hand;" stylesheets="@../../../../style.css">
          <font>
             <Font name="Tahoma Bold" size="21.0" />
          </font>
@@ -128,15 +124,15 @@
             </ImageView>
          </graphic>
       </Button>
-      <Pane fx:id="PaneBettingBuyerVisible" layoutX="106.0" layoutY="531.0" prefHeight="93.0" prefWidth="907.0">
+      <Pane fx:id="PaneBettingBuyerVisible" layoutX="105.0" layoutY="495.0" prefHeight="93.0" prefWidth="831.0">
          <children>
-            <TextField fx:id="buyerBettingField" layoutX="256.0" layoutY="25.0" prefHeight="41.0" prefWidth="354.0" promptText="Учитывайте шаг цены товара!" />
-            <Label layoutX="80.0" layoutY="30.0" prefHeight="34.0" prefWidth="162.0" text="Ваша ставка" textFill="#f41111" wrapText="true">
+            <TextField fx:id="buyerBettingField" layoutX="201.0" layoutY="26.0" prefHeight="41.0" prefWidth="354.0" promptText="Учитывайте шаг цены товара!" style="-fx-background-radius: 15;" stylesheets="@../../../../style.css" />
+            <Label layoutX="23.0" layoutY="29.0" prefHeight="34.0" prefWidth="162.0" text="Ваша ставка" textFill="#f41111" wrapText="true">
                <font>
                   <Font name="Tahoma" size="27.0" />
                </font>
             </Label>
-            <Button fx:id="buyerBettingButton" layoutX="619.0" layoutY="5.0" mnemonicParsing="false" onAction="#BuyerBet" prefHeight="84.0" prefWidth="288.0" style="-fx-cursor: hand;" stylesheets="@../../../../style.css" text="Сделать ставку!">
+            <Button fx:id="buyerBettingButton" layoutX="571.0" layoutY="5.0" mnemonicParsing="false" onAction="#BuyerBet" prefHeight="84.0" prefWidth="244.0" style="-fx-cursor: hand;" stylesheets="@../../../../style.css" text="Сделать ставку!">
                <font>
                   <Font name="Tahoma Bold" size="21.0" />
                </font>
@@ -150,5 +146,20 @@
             </Button>
          </children>
       </Pane>
+      <TextArea fx:id="descriptionLotsLabel" editable="false" layoutX="174.0" layoutY="145.0" prefHeight="132.0" prefWidth="347.0" stylesheets="@../../../../style.css" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextArea>
+      <Label layoutX="558.0" layoutY="145.0" prefHeight="34.0" prefWidth="131.0" text="Текущая цена:" textFill="#f41111">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="currentLotsPriceLabel" layoutX="696.0" layoutY="145.0" prefHeight="34.0" prefWidth="271.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

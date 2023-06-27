@@ -4,10 +4,12 @@ package com.example.onlineauction.controller.authentication;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.logging.Logger;
 
 import com.example.onlineauction.*;
 import com.example.onlineauction.constants.Role;
 import com.example.onlineauction.constants.Status;
+import com.example.onlineauction.controller.admin.AccountsController;
 import com.example.onlineauction.dao.UserDAO;
 import com.example.onlineauction.model.User;
 import javafx.event.ActionEvent;
@@ -18,38 +20,30 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import static com.example.onlineauction.util.AlertUtil.showAlert;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 public class AuthorizationController {
 
-    @FXML
-    private Button authorizationButtonUser;
+    @FXML private Button authorizationButtonUser, exitButtonAuthorization, goToRegistrationButton;
+    @FXML private TextField loginUserFieldAuth;
+    @FXML private PasswordField passwordUserFieldAuth;
 
-    @FXML
-    private Button exitButtonAuthorization;
-
-    @FXML
-    private Button goToRegistrationButton;
-
-    @FXML
-    private TextField loginUserFieldAuth;
-
-    @FXML
-    private PasswordField passwordUserFieldAuth;
+    private static final Logger LOGGER = LogManager.getLogger();
 
     public static int userId;
-
     public static String login;
     public static String password;
-
 
     @FXML
     void Authorization(ActionEvent event) throws Exception {
         login = loginUserFieldAuth.getText();
         password = passwordUserFieldAuth.getText();
 
-        // Проверка заполнения полей логина и пароля
         if (login.isEmpty() || password.isEmpty()) {
-            showAlert(Alert.AlertType.ERROR, "Ошибка", "Пожалуйста, заполните все поля.");
+            showAlert(Alert.AlertType.ERROR, "Ошибка", "Пожалуйста, заполните все поля!");
+            LOGGER.log(Level.WARNING, "Попытка авторизации с незаполненными полями.");
             return;
         }
 
@@ -57,20 +51,17 @@ public class AuthorizationController {
         UserDAO userDAO = new UserDAO(connection);
 
         try {
-            // Проверка аутентификации пользователя
             Role userRole = userDAO.getUserRole(login, password);
             if (userRole != null) {
-                // Получение пользователя по логину
                 User user = userDAO.getUserByLogin(login);
                 if (user != null) {
-                    // Проверка статуса пользователя
                     if (user.getStatus() == Status.BLOCK) {
-                        // Аккаунт заблокирован
-                        showAlert(Alert.AlertType.ERROR, "Ошибка!", "Ваш аккаунт заблокирован! Свяжитесь с администратором" );
+                        showAlert(Alert.AlertType.ERROR, "Ошибка!",
+                                "Ваш аккаунт заблокирован! Свяжитесь с администратором!");
+                        LOGGER.log(Level.WARNING, "Попытка авторизации с заблокированным аккаунтом. Логин: " + login);
                         return;
                     }
 
-                    // Аутентификация успешна
                     String fxmlPath;
                     String title;
                     switch (userRole) {
@@ -87,20 +78,21 @@ public class AuthorizationController {
                             title = "Окно администратора";
                             break;
                         default:
+                            LOGGER.log(Level.WARNING, "Неизвестная роль пользователя: " + userRole);
                             return;
                     }
                     userId = user.getId();
                     WindowsManager.openWindow(fxmlPath, title);
                     Stage stageClose = (Stage) goToRegistrationButton.getScene().getWindow();
                     stageClose.close();
+                    LOGGER.log(Level.INFO, "Успешная авторизация. Логин: " + login + ", Роль: " + userRole);
                 }
             } else {
-                // Неверные учетные данные
-                showAlert(Alert.AlertType.ERROR, "Ошибка", "Неверный логин или пароль.");
+                showAlert(Alert.AlertType.ERROR, "Ошибка", "Неверный логин или пароль!");
+                LOGGER.log(Level.WARNING, "Попытка авторизации с неверными логином или паролем. Логин: " + login);
             }
         } catch (SQLException e) {
-            // Обработка ошибки
-            showAlert(Alert.AlertType.ERROR, "Ошибка", "Ошибка при выполнении запроса к базе данных.");
+            LOGGER.log(Level.SEVERE, "Ошибка при выполнении SQL-запроса.", e);
             e.printStackTrace();
         }
     }
@@ -114,12 +106,8 @@ public class AuthorizationController {
     void GoToRegistraton(ActionEvent event) throws IOException {
         Stage stageCLose = (Stage) goToRegistrationButton.getScene().getWindow();
         stageCLose.close();
-        WindowsManager.openWindow("/com/example/onlineauction/AllUsers/registration-view.fxml", "Окно регистрации");
+        WindowsManager.openWindow("/com/example/onlineauction/AllUsers/registration-view.fxml",
+                "Окно регистрации");
+        LOGGER.log(Level.INFO, "Открыто окно регистрации.");
     }
-
-    @FXML
-    void initialize() {
-
-    }
-
 }

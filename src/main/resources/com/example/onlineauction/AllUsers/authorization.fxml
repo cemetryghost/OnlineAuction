@@ -48,8 +48,8 @@
             </ImageView>
          </children>
       </Pane>
-      <TextField fx:id="loginUserFieldAuth" layoutX="525.0" layoutY="166.0" prefHeight="38.0" prefWidth="279.0" style="-fx-background-radius: 15;" />
-      <PasswordField fx:id="passwordUserFieldAuth" layoutX="527.0" layoutY="259.0" prefHeight="38.0" prefWidth="279.0" style="-fx-background-radius: 15;" />
+      <TextField fx:id="loginUserFieldAuth" layoutX="525.0" layoutY="166.0" prefHeight="38.0" prefWidth="279.0" style="-fx-background-radius: 15;" stylesheets="@../../../../style.css" />
+      <PasswordField fx:id="passwordUserFieldAuth" layoutX="527.0" layoutY="259.0" prefHeight="38.0" prefWidth="279.0" style="-fx-background-radius: 15;" stylesheets="@../../../../style.css" />
       <Label layoutX="439.0" layoutY="169.0" prefHeight="32.0" prefWidth="63.0" text="Логин" textFill="#f41111">
          <font>
             <Font name="Tahoma" size="21.0" />

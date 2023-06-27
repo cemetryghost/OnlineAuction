@@ -16,7 +16,7 @@
    <children>
       <Pane layoutX="-1.0" layoutY="-6.0" prefHeight="605.0" prefWidth="383.0" style="-fx-background-color: #FFE4C4;">
          <children>
-            <ImageView fitHeight="52.0" fitWidth="58.0" layoutX="120.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="52.0" fitWidth="58.0" layoutX="111.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../image/profile_512px.png" />
                </image>
@@ -31,7 +31,7 @@
                   <Image url="@../../../../image/Graphic-Elements-PNG-Picture.png" />
                </image>
             </ImageView>
-            <Button fx:id="LotsButtonBuyer" layoutY="303.0" mnemonicParsing="false" onAction="#LotsBuyer" prefHeight="84.0" prefWidth="384.0" style="-fx-cursor: hand;" stylesheets="@../../../../style.css" text="Товары">
+            <Button fx:id="LotsButtonBuyer" layoutY="290.0" mnemonicParsing="false" onAction="#LotsBuyer" prefHeight="84.0" prefWidth="384.0" style="-fx-cursor: hand;" stylesheets="@../../../../style.css" text="Товары">
                <font>
                   <Font name="Tahoma Bold" size="21.0" />
                </font>
@@ -43,7 +43,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="participationsBuyerButton" layoutY="387.0" mnemonicParsing="false" onAction="#ParticipationsBuyer" prefHeight="84.0" prefWidth="384.0" style="-fx-cursor: hand;" stylesheets="@../../../../style.css" text="Мои участия">
+            <Button fx:id="participationsBuyerButton" layoutY="374.0" mnemonicParsing="false" onAction="#ParticipationsBuyer" prefHeight="84.0" prefWidth="384.0" style="-fx-cursor: hand;" stylesheets="@../../../../style.css" text="Мои участия">
                <font>
                   <Font name="Tahoma Bold" size="21.0" />
                </font>
@@ -55,16 +55,21 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="rulesBuyerButton" layoutX="111.0" layoutY="510.0" mnemonicParsing="false" onAction="#RulesBuyer" prefHeight="31.0" prefWidth="179.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Правила!" textFill="#2d36db" underline="true">
+            <Button fx:id="rulesBuyerButton" layoutX="111.0" layoutY="477.0" mnemonicParsing="false" onAction="#RulesBuyer" prefHeight="31.0" prefWidth="179.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Правила!" textFill="#2d36db" underline="true">
                <font>
                   <Font name="Tahoma" size="16.0" />
                </font>
             </Button>
-            <Label layoutX="178.0" layoutY="246.0" prefHeight="24.0" prefWidth="120.0" text="Покупатель" wrapText="true">
+            <Label layoutX="169.0" layoutY="236.0" prefHeight="24.0" prefWidth="120.0" text="Покупатель" wrapText="true">
                <font>
                   <Font name="Tahoma Bold" size="19.0" />
                </font>
             </Label>
+            <Button fx:id="exitAccountBuyer" layoutX="117.0" layoutY="546.0" mnemonicParsing="false" onAction="#ExitAccountBuyer" prefHeight="31.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Выйти из аккаунта" textFill="#f40606" underline="true">
+               <font>
+                  <Font name="Tahoma" size="16.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
       <Circle layoutX="18.0" layoutY="-5.0" radius="60.0" stroke="BLACK" strokeType="INSIDE">

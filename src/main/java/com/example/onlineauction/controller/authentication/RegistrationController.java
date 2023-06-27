@@ -4,6 +4,7 @@ import com.example.onlineauction.*;
 import com.example.onlineauction.constants.Role;
 import com.example.onlineauction.constants.Status;
 import com.example.onlineauction.controller.ManagementProductsController;
+import com.example.onlineauction.controller.admin.AccountsController;
 import com.example.onlineauction.dao.UserDAO;
 import com.example.onlineauction.model.User;
 import com.example.onlineauction.util.AlertUtil;
@@ -16,6 +17,8 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javafx.stage.Stage;
 
@@ -32,13 +35,13 @@ public class RegistrationController {
     @FXML private JFXRadioButton sellerRadioButton;
     @FXML private TextField surnameUserField;
     public static int registeredUserId;
-
     private RegistrationController registrationController;
+
+    private static final Logger LOGGER = LogManager.getLogger();
     public static boolean isRegistred;
 
     @FXML
     void initialize() {
-        // Настройка начального состояния элементов интерфейса
         buyerRadioButton.setSelected(false);
         sellerRadioButton.setSelected(false);
     }
@@ -68,18 +71,17 @@ public class RegistrationController {
         String password = passwordUserFieldReg.getText();
         LocalDate dateOfBirth = dateOfBirthField.getValue();
 
-        // Проверка заполнения всех полей
         if (firstName.isEmpty() || lastName.isEmpty() || username.isEmpty() || password.isEmpty() || dateOfBirth == null) {
             showAlert(Alert.AlertType.ERROR, "Ошибка", "Заполните все поля");
+            LOGGER.log(Level.WARNING, "Попытка регистрации с незаполненными полями.");
             return;
         }
 
-        // Получение текущей даты
         LocalDate currentDate = LocalDate.now();
 
-        // Проверка возраста пользователя (18 лет и старше)
         if (dateOfBirth.isAfter(currentDate.minusYears(18))) {
             showAlert(Alert.AlertType.ERROR, "Ошибка!", "Принимать участия в аукционах можно только с 18 лет!");
+            LOGGER.log(Level.WARNING, "Попытка регистрации лица моложе 18 лет. Логин: " + username);
             return;
         }
 
@@ -90,59 +92,57 @@ public class RegistrationController {
             role = Role.SELLER;
         } else {
             showAlert(Alert.AlertType.ERROR, "Ошибка", "Пожалуйста, выберите роль!");
+            LOGGER.log(Level.WARNING, "Попытка регистрации без выбора роли. Логин: " + username);
             return;
         }
 
-        // Создание нового пользователя
         User newUser = new User(firstName, lastName, username, password, dateOfBirth, role, Status.ACTIVE);
 
-        // Установка соединения с базой данных
         Connection connection = null;
         try {
             connection = DatabaseConnector.ConnectDb();
         } catch (Exception e) {
-            showAlert(Alert.AlertType.ERROR, "Ошибка", "Ошибка соединения с базой данных");
+            showAlert(Alert.AlertType.ERROR, "Ошибка", "Ошибка соединения с базой данных!");
+            LOGGER.log(Level.SEVERE, "Ошибка соединения с базой данных.", e);
             return;
         }
 
-        // Инициализация UserDAO с передачей соединения
         UserDAO userDAO = new UserDAO(connection);
 
         try {
             if (userDAO.isUserExist(username)) {
                 showAlert(Alert.AlertType.ERROR, "Ошибка регистрации", "Аккаунт с таким логином уже существует!");
+                LOGGER.log(Level.WARNING, "Попытка регистрации существующего логина. Логин: " + username);
                 return;
             }
-            // Сохранение пользователя в базе данных
+
             userDAO.saveUser(newUser);
 
             isRegistred = true;
 
             registeredUserId = userDAO.getIdByLogin(username);
-            System.out.println(registeredUserId);
             ManagementProductsController.sellerId = registeredUserId;
 
-            // Очистка полей ввода
             clearInputFields();
 
             showAlert(Alert.AlertType.INFORMATION, "Успешно", "Аккаунт зарегистрирован");
 
-            // Сохранение текущего пользователя в сессии
-
-            // Проверка роли пользователя и открытие соответствующего окна
             if (role == Role.BUYER) {
-                Stage stageCLose = (Stage) registrationButton.getScene().getWindow();
-                stageCLose.close();
+                Stage stageClose = (Stage) registrationButton.getScene().getWindow();
+                stageClose.close();
 
-                WindowsManager.openWindow("/com/example/onlineauction/buyer/buyer-view.fxml","Окно покупателя");
+                WindowsManager.openWindow("/com/example/onlineauction/buyer/buyer-view.fxml", "Окно покупателя");
             } else if (role == Role.SELLER) {
-                Stage stageCLose = (Stage) registrationButton.getScene().getWindow();
-                stageCLose.close();
+                Stage stageClose = (Stage) registrationButton.getScene().getWindow();
+                stageClose.close();
 
-                WindowsManager.openWindow("/com/example/onlineauction/seller/seller-view.fxml","Окно продавца");
+                WindowsManager.openWindow("/com/example/onlineauction/seller/seller-view.fxml", "Окно продавца");
             }
+
+            LOGGER.log(Level.INFO, "Успешная регистрация. Логин: " + username + ", Роль: " + role);
         } catch (SQLException e) {
             showAlert(Alert.AlertType.ERROR, "Ошибка", "Ошибка регистрации: " + e.getMessage());
+            LOGGER.log(Level.SEVERE, "Ошибка при выполнении SQL-запроса.", e);
         }
     }
 

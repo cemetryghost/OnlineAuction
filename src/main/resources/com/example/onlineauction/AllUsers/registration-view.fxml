@@ -50,8 +50,8 @@
             </ImageView>
          </children>
       </Pane>
-      <TextField fx:id="loginUserFieldReg" layoutX="527.0" layoutY="236.0" prefHeight="38.0" prefWidth="279.0" style="-fx-background-radius: 15;" />
-      <PasswordField fx:id="passwordUserFieldReg" layoutX="527.0" layoutY="301.0" prefHeight="38.0" prefWidth="279.0" style="-fx-background-radius: 15;" />
+      <TextField fx:id="loginUserFieldReg" layoutX="527.0" layoutY="236.0" prefHeight="38.0" prefWidth="279.0" style="-fx-background-radius: 15;" stylesheets="@../../../../style.css" />
+      <PasswordField fx:id="passwordUserFieldReg" layoutX="527.0" layoutY="301.0" prefHeight="38.0" prefWidth="279.0" style="-fx-background-radius: 15;" stylesheets="@../../../../style.css" />
       <Label layoutX="441.0" layoutY="239.0" prefHeight="32.0" prefWidth="63.0" text="Логин">
          <font>
             <Font name="Tahoma" size="21.0" />
@@ -85,8 +85,8 @@
             </RadialGradient>
          </fill>
       </Circle>
-      <TextField fx:id="surnameUserField" layoutX="525.0" layoutY="166.0" prefHeight="38.0" prefWidth="279.0" style="-fx-background-radius: 15;" />
-      <TextField fx:id="nameUserField" layoutX="525.0" layoutY="99.0" prefHeight="38.0" prefWidth="279.0" style="-fx-background-radius: 15;" />
+      <TextField fx:id="surnameUserField" layoutX="525.0" layoutY="166.0" prefHeight="38.0" prefWidth="279.0" style="-fx-background-radius: 15;" stylesheets="@../../../../style.css" />
+      <TextField fx:id="nameUserField" layoutX="525.0" layoutY="99.0" prefHeight="38.0" prefWidth="279.0" style="-fx-background-radius: 15;" stylesheets="@../../../../style.css" />
       <Label layoutX="426.0" layoutY="169.0" prefHeight="32.0" prefWidth="90.0" text="Фамилия">
          <font>
             <Font name="Tahoma" size="21.0" />
@@ -97,7 +97,7 @@
             <Font name="Tahoma" size="21.0" />
          </font>
       </Label>
-      <DatePicker fx:id="dateOfBirthField" editable="false" layoutX="597.0" layoutY="374.0" prefHeight="38.0" prefWidth="209.0" promptText="дд.мм.гггг" />
+      <DatePicker fx:id="dateOfBirthField" editable="false" layoutX="597.0" layoutY="374.0" prefHeight="38.0" prefWidth="209.0" promptText="дд.мм.гггг" stylesheets="@../../../../style.css" />
       <Label layoutX="433.0" layoutY="377.0" prefHeight="32.0" prefWidth="155.0" text="Дата рождения">
          <font>
             <Font name="Tahoma" size="21.0" />

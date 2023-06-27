@@ -11,14 +11,14 @@
 
 <AnchorPane fx:id="AnchorPaneLotsSeller" prefHeight="547.0" prefWidth="679.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.onlineauction.controller.seller.ProductsSellerController">
    <children>
-      <TableView fx:id="tableViewLotsSeller" layoutY="229.0" prefHeight="318.0" prefWidth="679.0" stylesheets="@../../../../style.css">
-        <columns>
-          <TableColumn fx:id="col_nameLotsSeller" prefWidth="130.66668701171875" text="Наименование" />
-          <TableColumn fx:id="col_categoryLotsSeller" prefWidth="108.6666259765625" text="Категория" />
-            <TableColumn fx:id="col_startPriceLotsSeller" prefWidth="115.33331298828125" text="Начальная цена" />
-            <TableColumn fx:id="col_currentPriceLotsSeller" prefWidth="106.0" text="Текущая цена" />
-            <TableColumn fx:id="col_statusLotsSeller" prefWidth="222.66668701171875" text="Статус " />
-        </columns>
+      <TableView fx:id="tableViewLotsSeller" layoutY="229.0" onMouseClicked="#getSelected" prefHeight="318.0" prefWidth="679.0" stylesheets="@../../../../style.css">
+         <columns>
+            <TableColumn fx:id="col_nameLotsSeller" prefWidth="113.3333740234375" text="Наименование" />
+            <TableColumn fx:id="col_categoryLotsSeller" prefWidth="143.3333740234375" text="Категория" />
+            <TableColumn fx:id="col_startPriceLotsSeller" prefWidth="115.3333740234375" text="Начальная цена" />
+            <TableColumn fx:id="col_currentPriceLotsSeller" prefWidth="102.66668701171875" text="Текущая цена" />
+            <TableColumn fx:id="col_statusLotsSeller" prefWidth="206.0" text="Статус " />
+         </columns>
       </TableView>
       <Label layoutX="278.0" layoutY="39.0" prefHeight="34.0" prefWidth="146.0" text="Мои лоты " textFill="#f41111" wrapText="true">
          <font>
