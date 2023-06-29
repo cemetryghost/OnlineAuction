@@ -1,14 +1,12 @@
 package com.example.onlineauction.controller.admin;
 
-import com.example.onlineauction.DatabaseConnector;
-import com.example.onlineauction.LogManager;
-import com.example.onlineauction.WindowsManager;
+import com.example.onlineauction.dao.DatabaseConnector;
+import com.example.onlineauction.util.LogManager;
+import com.example.onlineauction.controller.WindowsManager;
 import com.example.onlineauction.constants.StatusLot;
 import com.example.onlineauction.controller.seller.ProductsSellerController;
-import com.example.onlineauction.dao.CategoryDAO;
 import com.example.onlineauction.dao.LotDAO;
 import com.example.onlineauction.dao.UserDAO;
-import com.example.onlineauction.model.Category;
 import com.example.onlineauction.model.Lot;
 import com.example.onlineauction.util.СonfirmationDialog;
 import javafx.collections.FXCollections;
@@ -105,7 +103,7 @@ public class ProductsAdminController implements Initializable {
                 Stage closeStage = (Stage) editLotsButton.getScene().getWindow();
                 closeStage.close();
 
-                WindowsManager.openWindow("AllUsers/add-edit-products.fxml", "Редактирование лота");
+                WindowsManager.openWindow("/com/example/onlineauction/AllUsers/add-edit-products.fxml", "Редактирование лота");
                 LOGGER.log(Level.INFO, "Открыто окно редактирования лота. ID лота: " + selectedLot.getId());
             }
         } else {
@@ -148,7 +146,7 @@ public class ProductsAdminController implements Initializable {
     void MoreInfoDetailsLots(ActionEvent event) {
         Lot selectedLot = TableViewAdminLots.getSelectionModel().getSelectedItem();
         if (selectedLot != null) {
-            WindowsManager.openWindow("administrator/admin-details.fxml","Детали лота");
+            WindowsManager.openWindow("/com/example/onlineauction/administrator/admin-details.fxml","Детали лота");
         } else {
             showAlert(Alert.AlertType.ERROR, "Ошибка!", "Выберите лот из таблицы!");
         }

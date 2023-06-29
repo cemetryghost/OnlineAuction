@@ -1,9 +1,7 @@
 package com.example.onlineauction.model;
 
-import com.example.onlineauction.DatabaseConnector;
 import com.example.onlineauction.constants.StatusLot;
-import com.example.onlineauction.dao.BidDAO;
-import com.example.onlineauction.dao.LotDAO;
+import com.example.onlineauction.dao.DatabaseConnector;
 import com.example.onlineauction.dao.UserDAO;
 
 import java.sql.Date;

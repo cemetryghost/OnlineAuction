@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import com.example.onlineauction.WindowsManager;
+import com.example.onlineauction.controller.WindowsManager;
 import com.example.onlineauction.util.DateTimeUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -70,7 +70,7 @@ public class BuyerController {
         Stage stageClose = (Stage) exitAccountBuyer.getScene().getWindow();
         stageClose.close();
 
-        WindowsManager.openWindow("AllUsers/authorization.fxml","Авторизация");
+        WindowsManager.openWindow("/com/example/onlineauction/AllUsers/authorization.fxml","Авторизация");
     }
 
 }

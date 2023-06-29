@@ -1,10 +1,9 @@
 package com.example.onlineauction.controller.admin;
 
-import com.example.onlineauction.LogManager;
-import com.example.onlineauction.dao.BidDAO;
+import com.example.onlineauction.util.LogManager;
 import com.example.onlineauction.model.Category;
 import com.example.onlineauction.dao.CategoryDAO;
-import com.example.onlineauction.DatabaseConnector;
+import com.example.onlineauction.dao.DatabaseConnector;
 import com.example.onlineauction.util.СonfirmationDialog;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

@@ -1,7 +1,6 @@
 package com.example.onlineauction.controller.admin;
 
-import com.example.onlineauction.DatabaseConnector;
-import com.example.onlineauction.controller.seller.ProductsSellerController;
+import com.example.onlineauction.dao.DatabaseConnector;
 import com.example.onlineauction.dao.CategoryDAO;
 import com.example.onlineauction.dao.LotDAO;
 import com.example.onlineauction.dao.UserDAO;
@@ -12,8 +11,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.net.URL;

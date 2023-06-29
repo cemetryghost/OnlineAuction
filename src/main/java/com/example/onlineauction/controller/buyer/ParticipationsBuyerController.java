@@ -5,15 +5,12 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.example.onlineauction.DatabaseConnector;
-import com.example.onlineauction.LogManager;
-import com.example.onlineauction.controller.admin.AccountsController;
+import com.example.onlineauction.dao.DatabaseConnector;
+import com.example.onlineauction.util.LogManager;
 import com.example.onlineauction.controller.authentication.AuthorizationController;
 import com.example.onlineauction.dao.BidDAO;
-import com.example.onlineauction.dao.CategoryDAO;
 import com.example.onlineauction.dao.UserDAO;
 import com.example.onlineauction.model.Bid;
-import com.example.onlineauction.model.Category;
 import com.example.onlineauction.model.Lot;
 import com.example.onlineauction.dao.LotDAO;
 import javafx.collections.FXCollections;
@@ -24,7 +21,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 
 import static com.example.onlineauction.util.AlertUtil.showAlert;
 

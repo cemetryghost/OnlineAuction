@@ -1,7 +1,6 @@
 package com.example.onlineauction.dao;
 
-import com.example.onlineauction.DatabaseConnector;
-import com.example.onlineauction.LogManager;
+import com.example.onlineauction.util.LogManager;
 import com.example.onlineauction.model.Bid;
 import com.example.onlineauction.model.Lot;
 

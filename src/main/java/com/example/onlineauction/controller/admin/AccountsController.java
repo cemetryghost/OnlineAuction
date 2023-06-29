@@ -8,15 +8,14 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.example.onlineauction.DatabaseConnector;
-import com.example.onlineauction.LogManager;
+import com.example.onlineauction.dao.DatabaseConnector;
+import com.example.onlineauction.util.LogManager;
 import com.example.onlineauction.constants.Role;
 import com.example.onlineauction.constants.Status;
 import com.example.onlineauction.model.User;
 import com.example.onlineauction.dao.UserDAO;
 import com.example.onlineauction.util.СonfirmationDialog;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.collections.FXCollections;

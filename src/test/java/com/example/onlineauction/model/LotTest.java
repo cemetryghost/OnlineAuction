@@ -11,7 +11,7 @@ class LotTest {
 
     @BeforeEach
     public void setUp() {
-        lot = new Lot(1, "Example Lot", "Category", 100.0, 150.0, "Active");
+        lot = new Lot(1, "Example Lot", "Category", 100.0, 150.0, "ACTIVE");
     }
 
     @Test
@@ -51,7 +51,7 @@ class LotTest {
 
     @Test
     public void testGetStatusString() {
-        String expectedStatusString = "Active";
+        String expectedStatusString = "ACTIVE";
         String actualStatusString = lot.getStatusString();
         Assertions.assertEquals(expectedStatusString, actualStatusString);
     }

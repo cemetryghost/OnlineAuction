@@ -1,11 +1,10 @@
 package com.example.onlineauction.dao;
 
-import com.example.onlineauction.LogManager;
+import com.example.onlineauction.util.LogManager;
 import com.example.onlineauction.controller.authentication.AuthorizationController;
 import com.example.onlineauction.controller.authentication.RegistrationController;
 import com.example.onlineauction.model.Lot;
 import com.example.onlineauction.constants.StatusLot;
-import javafx.scene.control.Alert;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

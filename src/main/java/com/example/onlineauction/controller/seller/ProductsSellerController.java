@@ -9,14 +9,12 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
-import com.example.onlineauction.DatabaseConnector;
-import com.example.onlineauction.LogManager;
-import com.example.onlineauction.WindowsManager;
+import com.example.onlineauction.dao.DatabaseConnector;
+import com.example.onlineauction.util.LogManager;
+import com.example.onlineauction.controller.WindowsManager;
 import com.example.onlineauction.constants.Role;
 import com.example.onlineauction.constants.StatusLot;
 import com.example.onlineauction.controller.DetailProductsController;
-import com.example.onlineauction.controller.ManagementProductsController;
-import com.example.onlineauction.controller.admin.AccountsController;
 import com.example.onlineauction.controller.authentication.AuthorizationController;
 import com.example.onlineauction.controller.authentication.RegistrationController;
 import com.example.onlineauction.dao.BidDAO;
@@ -36,7 +34,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -130,7 +127,7 @@ public class ProductsSellerController {
                 Stage closeStage = (Stage) editLotsSeller.getScene().getWindow();
                 closeStage.close();
 
-                WindowsManager.openWindow("AllUsers/add-edit-products.fxml", "Редактирование лота");
+                WindowsManager.openWindow("/com/example/onlineauction/AllUsers/add-edit-products.fxml", "Редактирование лота");
                 booleanEdit = true;
             }
         } else {

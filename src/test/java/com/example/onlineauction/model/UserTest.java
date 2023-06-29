@@ -14,7 +14,6 @@ class UserTest {
 
     @BeforeEach
     public void setup() {
-        // Инициализация объекта User перед каждым тестом
         user = new User("John", "Doe", "johndoe", "password", LocalDate.of(1990, 5, 15), Role.BUYER, Status.ACTIVE);
     }
 

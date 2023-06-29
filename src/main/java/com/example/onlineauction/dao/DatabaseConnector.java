@@ -1,4 +1,6 @@
-package com.example.onlineauction;
+package com.example.onlineauction.dao;
+
+import com.example.onlineauction.util.LogManager;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

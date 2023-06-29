@@ -1,6 +1,6 @@
 package com.example.onlineauction.dao;
 
-import com.example.onlineauction.LogManager;
+import com.example.onlineauction.util.LogManager;
 import com.example.onlineauction.constants.Role;
 import com.example.onlineauction.constants.Status;
 import com.example.onlineauction.model.User;

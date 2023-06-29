@@ -1,34 +1,28 @@
 package com.example.onlineauction.controller;
 
 import java.net.URL;
-import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.example.onlineauction.*;
 import com.example.onlineauction.constants.Role;
-import com.example.onlineauction.controller.admin.AdminController;
 import com.example.onlineauction.controller.authentication.AuthorizationController;
 import com.example.onlineauction.controller.authentication.RegistrationController;
 import com.example.onlineauction.controller.seller.ProductsSellerController;
 import com.example.onlineauction.dao.CategoryDAO;
-import com.example.onlineauction.controller.seller.SellerController;
+import com.example.onlineauction.dao.DatabaseConnector;
 import com.example.onlineauction.dao.LotDAO;
 import com.example.onlineauction.dao.UserDAO;
 import com.example.onlineauction.model.Category;
 import com.example.onlineauction.model.Lot;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import com.example.onlineauction.util.LogManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import static com.example.onlineauction.util.AlertUtil.showAlert;
@@ -73,9 +67,9 @@ public class ManagementProductsController {
         currentStage.close();
 
         if (ProductsSellerController.isAdmin) {
-            WindowsManager.openWindow("administrator/administrator-view.fxml", "Окно администратора");
+            WindowsManager.openWindow("/com/example/onlineauction/administrator/administrator-view.fxml", "Окно администратора");
         } else {
-            WindowsManager.openWindow("seller/seller-view.fxml", "Окно продавца");
+            WindowsManager.openWindow("/com/example/onlineauction/seller/seller-view.fxml", "Окно продавца");
         }
     }
 
@@ -141,9 +135,9 @@ public class ManagementProductsController {
                 stageClose.close();
 
                 if (ProductsSellerController.isAdmin) {
-                    WindowsManager.openWindow("administrator/administrator-view.fxml", "Окно администратора");
+                    WindowsManager.openWindow("/com/example/onlineauction/administrator/administrator-view.fxml", "Окно администратора");
                 } else {
-                    WindowsManager.openWindow("seller/seller-view.fxml", "Окно продавца");
+                    WindowsManager.openWindow("/com/example/onlineauction/seller/seller-view.fxml", "Окно продавца");
                 }
                 ProductsSellerController.booleanAdd = false;
                 ProductsSellerController.booleanEdit = false;
@@ -211,9 +205,9 @@ public class ManagementProductsController {
                 stageClose.close();
 
                 if (ProductsSellerController.isAdmin) {
-                    WindowsManager.openWindow("administrator/administrator-view.fxml", "Окно администратора");
+                    WindowsManager.openWindow("/com/example/onlineauction/administrator/administrator-view.fxml", "Окно администратора");
                 } else {
-                    WindowsManager.openWindow("seller/seller-view.fxml", "Окно продавца");
+                    WindowsManager.openWindow("/com/example/onlineauction/seller/seller-view.fxml", "Окно продавца");
                 }
                 ProductsSellerController.booleanAdd = false;
                 ProductsSellerController.booleanEdit = false;

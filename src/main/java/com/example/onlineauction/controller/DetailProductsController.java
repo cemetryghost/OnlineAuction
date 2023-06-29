@@ -2,14 +2,12 @@ package com.example.onlineauction.controller;
 
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.Driver;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.example.onlineauction.DatabaseConnector;
-import com.example.onlineauction.LogManager;
-import com.example.onlineauction.WindowsManager;
+import com.example.onlineauction.dao.DatabaseConnector;
+import com.example.onlineauction.util.LogManager;
 import com.example.onlineauction.constants.Role;
 import com.example.onlineauction.controller.authentication.AuthorizationController;
 import com.example.onlineauction.controller.authentication.RegistrationController;
@@ -21,7 +19,6 @@ import com.example.onlineauction.dao.LotDAO;
 import com.example.onlineauction.dao.UserDAO;
 import com.example.onlineauction.model.Bid;
 import com.example.onlineauction.model.Lot;
-import com.example.onlineauction.model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -108,7 +105,7 @@ public class DetailProductsController implements Initializable {
             Stage stageClose = (Stage) buyerBettingButton.getScene().getWindow();
             stageClose.close();
 
-            WindowsManager.openWindow("buyer/buyer-view.fxml", "Окно покупателя");
+            WindowsManager.openWindow("/com/example/onlineauction/buyer/buyer-view.fxml", "Окно покупателя");
             LOGGER.info("Ставка успешно сделана. ID лота: " + lot.getId() + ", ID покупателя: " + id);
         } else {
             showAlert(Alert.AlertType.ERROR, "Ошибка", "Учитывайте текущую ставку и шаг цены!");

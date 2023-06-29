@@ -3,7 +3,7 @@ package com.example.onlineauction.controller.seller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import com.example.onlineauction.DatabaseConnector;
+import com.example.onlineauction.dao.DatabaseConnector;
 import com.example.onlineauction.controller.authentication.AuthorizationController;
 import com.example.onlineauction.controller.authentication.RegistrationController;
 import com.example.onlineauction.dao.LotDAO;

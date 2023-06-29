@@ -1,11 +1,10 @@
 package com.example.onlineauction;
 
+import com.example.onlineauction.dao.DatabaseConnector;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Connection;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class DatabaseConnectorTest {
 

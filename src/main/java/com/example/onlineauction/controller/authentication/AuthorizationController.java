@@ -6,12 +6,13 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Logger;
 
-import com.example.onlineauction.*;
 import com.example.onlineauction.constants.Role;
 import com.example.onlineauction.constants.Status;
-import com.example.onlineauction.controller.admin.AccountsController;
+import com.example.onlineauction.controller.WindowsManager;
+import com.example.onlineauction.dao.DatabaseConnector;
 import com.example.onlineauction.dao.UserDAO;
 import com.example.onlineauction.model.User;
+import com.example.onlineauction.util.LogManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -21,7 +22,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import static com.example.onlineauction.util.AlertUtil.showAlert;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 
 public class AuthorizationController {
