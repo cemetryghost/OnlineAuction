@@ -1,11 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-<<<<<<< HEAD
     <img src="src\main\resources\image\ru_logo.png" width="700" height="185">
-=======
-    <img src="https://github.com/cemetryghost/OnlineAuction/blob/master/src/main/resources/image/ru_logo.png" alt="Logo" width="700" height="185">
->>>>>>> de7b22c7a9b86e9375492e968a476b5e6a88f754
   <h3 align="center">Онлайн аукцион</h3>
   <p align="center">
     Приложение для торговли
