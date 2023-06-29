@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <img src="https://github.com/cemetryghost/OnlineAuction/blob/master/src/main/resources/image/ru_logo.png" alt="Logo" width="500" height="185">
+    <img src="https://github.com/cemetryghost/OnlineAuction/blob/master/src/main/resources/image/ru_logo.png" alt="Logo" width="600" height="185">
   <h3 align="center">Рекрутер</h3>
   <p align="center">
     Приложение обработки заявок
