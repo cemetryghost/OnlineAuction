@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <img src="src\main\resources\image\ru_logo.png" width="700" height="185">
+    <img src="src\main\resources\image\png-transparent-auction-gavel-icon-auction-angle-internet-hammer-thumbnail.png" width="700" height="185">
   <h3 align="center">Онлайн аукцион</h3>
   <p align="center">
     Приложение для торговли
